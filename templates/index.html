@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f7fb">
+  <title>Orbit Hire — Recruitment workspace</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+</head>
+<body>
+  <main id="login-screen" class="login-screen">
+    <section class="login-art" aria-label="Recruitment workspace">
+      <a class="brand brand-light" href="/login" aria-label="Orbit Hire home">
+        <span class="brand-mark"><span></span><span></span><span></span></span>
+        <span>orbit<span class="brand-accent">hire</span></span>
+      </a>
+      <div class="login-art-copy">
+        <span class="eyebrow eyebrow-light"><span class="live-dot"></span> THE PEOPLE-FIRST RECRUITMENT OS</span>
+        <h1>Better connections.<br><em>Brighter careers.</em></h1>
+        <p>Every candidate, conversation and career move — in one clear view.</p>
+        <div class="art-metric">
+          <div class="avatar-stack" aria-hidden="true">
+            <span>AK</span><span>RM</span><span>IS</span><span>+2k</span>
+          </div>
+          <div><strong>Good things happen here.</strong><small>Join teams placing talent with purpose.</small></div>
+        </div>
+      </div>
+      <div class="art-bottom"><span>Thoughtful hiring starts with a little more clarity.</span><span>01 — 12</span></div>
+      <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+    </section>
+    <section class="login-panel">
+      <div class="login-box">
+        <div class="login-mobile-brand brand">
+          <span class="brand-mark"><span></span><span></span><span></span></span>
+          <span>orbit<span class="brand-accent">hire</span></span>
+        </div>
+        <div id="login-view">
+          <div class="login-heading">
+            <span class="eyebrow">WELCOME BACK</span>
+            <h2>Sign in to your<br>workspace<span class="text-violet">.</span></h2>
+            <p>Good to see you again. Let's make today count.</p>
+          </div>
+          <form id="login-form" class="form-stack">
+            <label>Email address
+              <span class="input-icon"><span class="field-glyph">✉</span><input name="email" type="email" placeholder="you@company.com" autocomplete="username" required></span>
+            </label>
+            <label>Password
+              <span class="input-icon"><span class="field-glyph">⌑</span><input name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required><button class="password-toggle" type="button" aria-label="Show password">Show</button></span>
+            </label>
+            <label>Choose your workspace</label>
+            <input class="login-role-input" name="role" type="hidden" value="RECRUITER" required>
+            <div class="demo-role-picker" role="group" aria-label="Choose a demo account role">
+              <button type="button" class="demo-role-option is-selected" data-action="demo-role" data-demo-role="RECRUITER" data-demo-email="recruiter@demo.com" aria-pressed="true"><span class="demo-role-icon">♙</span><strong>Recruiter</strong><small>Your own account</small></button>
+              <button type="button" class="demo-role-option" data-action="demo-role" data-demo-role="ADMIN" data-demo-email="admin@demo.com" aria-pressed="false"><span class="demo-role-icon">✳</span><strong>Admin</strong><small>Full workspace</small></button>
+              <button type="button" class="demo-role-option" data-action="demo-role" data-demo-role="PLACEMENT_OFFICER" data-demo-email="placement@demo.com" aria-pressed="false"><span class="demo-role-icon">↗</span><strong>Placement</strong><small>Student outcomes</small></button>
+            </div>
+            <div class="login-inline"><label class="check-label"><input type="checkbox" checked> Keep me signed in</label><a href="#demo-access" data-action="demo-access">Forgot password?</a></div>
+            <button class="button button-primary button-wide" type="submit"><span>Sign in to workspace</span><span aria-hidden="true">→</span></button>
+            <p class="form-error" id="login-error" role="alert"></p>
+          </form>
+          <div class="demo-note"><span class="demo-icon">✦</span><span><strong>Recruiter sign-in</strong><small>Enter your own recruiter email and password.</small></span></div>
+          <p class="auth-switch">New to Orbit Hire? <button type="button" data-action="show-register">Create a recruiter account</button></p>
+          <p class="login-legal">By continuing, you agree to our <a href="#terms">Terms</a> and <a href="#privacy">Privacy Policy</a>.</p>
+        </div>
+        <div id="register-view" class="hidden">
+          <div class="login-heading">
+            <span class="eyebrow">JOIN YOUR TEAM</span>
+            <h2>Create your<br>recruiter account<span class="text-violet">.</span></h2>
+            <p>Set up your own secure sign-in for the recruitment workspace.</p>
+          </div>
+          <form id="register-form" class="form-stack">
+            <label>Full name
+              <span class="input-icon"><span class="field-glyph">♙</span><input name="full_name" type="text" maxlength="120" placeholder="Your full name" autocomplete="name" required></span>
+            </label>
+            <label>Work email
+              <span class="input-icon"><span class="field-glyph">✉</span><input name="email" type="email" maxlength="150" placeholder="you@company.com" autocomplete="email" required></span>
+            </label>
+            <label>Password
+              <span class="input-icon"><span class="field-glyph">⌑</span><input name="password" type="password" minlength="8" placeholder="At least 8 characters" autocomplete="new-password" required><button class="password-toggle" type="button" aria-label="Show password">Show</button></span>
+            </label>
+            <label>Confirm password
+              <span class="input-icon"><span class="field-glyph">⌑</span><input name="confirm_password" type="password" minlength="8" placeholder="Re-enter your password" autocomplete="new-password" required></span>
+            </label>
+            <button class="button button-primary button-wide" type="submit"><span>Create account</span><span aria-hidden="true">→</span></button>
+            <p class="form-error" id="register-error" role="alert"></p>
+          </form>
+          <p class="auth-switch">Already have an account? <button type="button" data-action="show-login">Sign in</button></p>
+          <p class="register-footnote">Recruiter access only. Admin and placement accounts are managed by your administrator.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="app-shell" class="app-shell hidden">
+    <aside class="sidebar">
+      <a class="brand sidebar-brand" href="/dashboard">
+        <span class="brand-mark"><span></span><span></span><span></span></span>
+        <span>orbit<span class="brand-accent">hire</span></span>
+      </a>
+      <div class="workspace-switch">
+        <span class="workspace-icon">K</span>
+        <span class="workspace-copy"><strong>Kiran Academy</strong><small>Placement workspace</small></span>
+        <span class="chevron">⌄</span>
+      </div>
+      <nav class="side-nav" aria-label="Main navigation">
+        <span class="nav-caption">WORKSPACE</span>
+        <a href="/dashboard" data-route="dashboard" aria-label="Overview" title="Overview"><span class="nav-icon">◫</span>Overview</a>
+        <a href="/candidates" data-route="candidates" aria-label="Candidates" title="Candidates"><span class="nav-icon">♙</span>Candidates<span class="nav-count" id="candidate-count">30</span></a>
+        <a href="/companies" data-route="companies" aria-label="Companies" title="Companies"><span class="nav-icon">▦</span>Companies</a>
+        <a href="/jobs" data-route="jobs" aria-label="Job openings" title="Job openings"><span class="nav-icon">▤</span>Job openings<span class="nav-pulse"></span></a>
+        <a href="/applications" data-route="applications" aria-label="Applications" title="Applications"><span class="nav-icon">▧</span>Applications</a>
+        <a href="/interviews" data-route="interviews" aria-label="Interviews" title="Interviews"><span class="nav-icon">◷</span>Interviews</a>
+        <span class="nav-caption nav-caption-spaced">OUTCOMES</span>
+        <a href="/placement-process" data-route="placement-process" aria-label="Offers and placements" title="Offers and placements"><span class="nav-icon">✳</span>Offers &amp; placements</a>
+        <a href="/reports" data-route="reports" aria-label="Reports" title="Reports"><span class="nav-icon">▥</span>Reports</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card"><span class="help-spark">✦</span><strong>Need a hand?</strong><small>We're happy to help your team.</small><a href="mailto:support@orbithire.example">Visit help center <span>↗</span></a></div>
+        <div class="sidebar-user">
+          <span class="user-avatar" id="sidebar-avatar">KR</span>
+          <span class="user-copy"><strong id="sidebar-name">Kavya Recruiter</strong><small id="sidebar-role">Recruiter</small></span>
+          <button class="icon-button logout-button" title="Sign out" aria-label="Sign out" data-action="logout">↗</button>
+        </div>
+      </div>
+    </aside>
+
+    <section class="main-column">
+      <header class="topbar">
+        <div class="breadcrumbs"><span>Workspace</span><span class="crumb-separator">/</span><strong id="breadcrumb-current">Overview</strong></div>
+        <div class="topbar-actions">
+          <label class="global-search"><span>⌕</span><input id="global-search" type="search" placeholder="Search anything..." autocomplete="off"><kbd>⌘ K</kbd></label>
+          <button class="icon-button notification-button" aria-label="Notifications" title="Notifications" data-action="notifications">♧<i></i></button>
+          <span class="topbar-divider"></span>
+          <button class="profile-button" data-action="profile"><span class="user-avatar" id="top-avatar">KR</span><span><strong id="top-name">Kavya Recruiter</strong><small id="top-role">Recruiter</small></span><span class="chevron">⌄</span></button>
+          <button class="button button-secondary topbar-logout" type="button" title="Sign out of your workspace" aria-label="Sign out of your workspace" data-action="logout"><span aria-hidden="true">↪</span><span class="logout-label">Sign out</span></button>
+        </div>
+      </header>
+      <main id="page-content" class="page-content" tabindex="-1"></main>
+      <footer class="app-footer"><span>Made for people, not paperwork <span class="footer-heart">♥</span></span><span>Orbit Hire <span id="footer-year"></span> · Kiran Academy</span></footer>
+    </section>
+  </div>
+
+  <div id="modal-root"></div>
+  <div id="toast-root" class="toast-root" aria-live="polite"></div>
+</body>
+</html>
